@@ -21,8 +21,8 @@
 
 #define PI 3.14159265359
 #define TIME_STEP           64 //adjusts the speed (ms)
-#define SENSOR_NUM_MAX      250
-#define ODOR_FILTER_LENGTH  150 //~10sec //number of measurements before averaging
+#define SENSOR_NUM_MAX      45
+#define ODOR_FILTER_LENGTH  7 // Default value 150 -> ~10sec //number of measurements before averaging
 #define ITERATIONS          1
 #define RANDOM0_GRID1       1
 #define RANDOM_ITERATIONS   0
@@ -100,13 +100,33 @@ void init(){
 
 
 void set_sensor_position(int i, double * position){
-    if(total_nbr_iteration - iteration <= RANDOM_ITERATIONS){
+      // Static 2D grid (3x15 = 45 sensors)
+      if(i < 15){
+          position[0] = i+1;
+          position[1] = 1;
+      }
+      else if((i >= 15) && (i < 30)){
+          position[0] = i%15 + 1;
+          position[1] = 2;
+      }
+      else if((i >= 30) && (i < 45)){
+          position[0] = i%15+1;
+          position[1] = 3;
+      }
+      else{
+          position[0] = 0;
+          position[1] = 0;
+      }
+      position[2] = 0.1;
+      //printf("Sensor %d position is %f %f\n", i, position[0], position[1]);
+      
+    /*if(total_nbr_iteration - iteration <= RANDOM_ITERATIONS){
         //random
         position[0] = ( (rand()/(double)RAND_MAX) * (XMAX-XMIN) ) + XMIN;
         position[1] = ( (rand()/(double)RAND_MAX) * (YMAX-YMIN) ) + YMIN;
         position[2] =  0.1;
     }else{
-        //grid
+        //grid        
         int index = i + iteration * SENSOR_NUM_MAX;
         if (index >= XNUM*YNUM){
             if(sensor_number == SENSOR_NUM_MAX)
@@ -121,7 +141,7 @@ void set_sensor_position(int i, double * position){
             position[2] = 0.1;
         }
         //printf("i %d index %d position %f %f \n", i, index, position[0], position[1]);
-    }
+    }*/
 }
 
 void read_sensor_positions_from_file(){
@@ -311,9 +331,9 @@ int main() {
                     sampleBuffer[i].instant_concentration = odor_read(i);
                     //printf("odor sensor %d -> %f \n", i, sampleBuffer[i].instant_concentration);
                     //wind 
-                    wind_read(i, &sampleBuffer[i].instant_wind_intensity, &sampleBuffer[i].instant_wind_angle);
+                    //wind_read(i, &sampleBuffer[i].instant_wind_intensity, &sampleBuffer[i].instant_wind_angle);
                     //printf("wind sensor %d -> %f %f\n", i, sampleBuffer[i].instant_wind_intensity, sampleBuffer[i].instant_wind_angle);
-                    sampleBuffer[i].add_all_to_buffer();
+                    sampleBuffer[i].add_odor_to_buffer();
                 }
                 n_samples++;
             }else{
@@ -330,11 +350,10 @@ int main() {
                 // }
                 for(i=0; i < sensor_number; i++){
                     //take the average
-                    sampleBuffer[i].average_all();
+                    sampleBuffer[i].average_odor();
                     //log in the data_base
-                    fprintf(data_base, "%f, %f, %f, %f, %f, %f, %f, %f, %f, %f\n", 
+                    fprintf(data_base, "%f, %f, %f, %f, %f, %f, %f, %f\n", 
                         source_position[0], source_position[1], source_position[2],                  // Sx, Sy, Sz,
-                        sampleBuffer[i].average_wind_intensity, sampleBuffer[i].average_wind_angle,     // wind_intensity, wind angle,
                         sensor_position[i][0], sensor_position[i][1], sensor_position[i][2],            // px, py, pz,
                         sampleBuffer[i].average_concentration, sampleBuffer[i].stdDev_concentration);   // C, stdC
                 }
