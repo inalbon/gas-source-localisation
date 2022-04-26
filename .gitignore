@@ -33,11 +33,8 @@
 *.app
 
 # Webots
-*.wbo
 *.wbproj
 *.d
 
 # Folders
 log
-plugins
-protos
