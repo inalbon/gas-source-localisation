@@ -81,7 +81,7 @@ void SampleBuffer::set_buffer_length(int length){
 
 	concentration_buffer 	= (double*) realloc(concentration_buffer, 	buffer_length * sizeof(double));
 	wind_intensity_buffer 	= (double*) realloc(wind_intensity_buffer, 	buffer_length * sizeof(double));
-	wind_angle_buffer 		= (double*) realloc(wind_angle_buffer, 		buffer_length * sizeof(double));
+	wind_angle_buffer 	= (double*) realloc(wind_angle_buffer, 	buffer_length * sizeof(double));
 }
 
 void SampleBuffer::reset_all(){
@@ -131,8 +131,8 @@ void SampleBuffer::average_odor(){
 	double variance = 0;
 	for(int i = 0; i < n_samples; i++)
       	variance += pow(concentration_buffer[i] - average_concentration, 2);
-    variance /= n_samples;
-    stdDev_concentration = sqrt(variance);
+           variance /= n_samples;
+           stdDev_concentration = sqrt(variance);
 }
 
 void SampleBuffer::average_wind(){

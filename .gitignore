@@ -35,6 +35,7 @@
 # Webots
 *.wbproj
 *.d
+*Makefile
 
 # Folders
 log

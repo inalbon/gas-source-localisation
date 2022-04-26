@@ -20,12 +20,13 @@
 #include "tinyxml2.h"
 
 #define PI 3.14159265359
-#define TIME_STEP           64 //adjusts the speed (ms)
+#define TIME_STEP           500 //adjusts the speed (ms) // Default value 64
 #define SENSOR_NUM_MAX      45
-#define ODOR_FILTER_LENGTH  7 // Default value 150 -> ~10sec //number of measurements before averaging
+#define ODOR_FILTER_LENGTH  150 // Default value 150 -> ~10sec //number of measurements before averaging
 #define ITERATIONS          1
 #define RANDOM0_GRID1       1
 #define RANDOM_ITERATIONS   0
+#define RECORDING_TIME      5  // minutes
 
 #define XMIN 2.75
 #define XMAX 12.7418
@@ -45,7 +46,7 @@ WbDeviceTag wind_tag[SENSOR_NUM_MAX];
 SampleBuffer* sampleBuffer = new SampleBuffer[SENSOR_NUM_MAX];
 int sensor_number = 0;
 double sensor_position[SENSOR_NUM_MAX][3] = {{0}};
-double source_position[3] = {0};
+double source_position[3] = {0.5, 2, 0.1};
 int total_nbr_iteration = 0;
 int iteration = 0;
 
@@ -62,7 +63,7 @@ void init(){
     srand((long)time(NULL));
 
     // find total number of itrations
-    total_nbr_iteration = RANDOM_ITERATIONS + ceil(XNUM*YNUM / (float)SENSOR_NUM_MAX);
+    total_nbr_iteration = RECORDING_TIME*60*2;
     printf("total_nbr_iteration : %d\n", total_nbr_iteration);
     sensor_number = SENSOR_NUM_MAX;
 
@@ -73,7 +74,8 @@ void init(){
     //Define position of new node inside the children field
     root_children_field = wb_supervisor_node_get_field(root_node, "children");
   
-    //change_number_of_sensors();
+    change_number_of_sensors();
+    
     //read_sensor_positions_from_file();
     //create new sensor nodes
     for (i=0; i<SENSOR_NUM_MAX; i++){
@@ -92,7 +94,7 @@ void init(){
         wind_tag[i] = wb_robot_get_device(tag_name);
         wb_receiver_enable(wind_tag[i],TIME_STEP);
         //set buffer length for all sensors
-        sampleBuffer[i].set_buffer_length(ODOR_FILTER_LENGTH);
+        sampleBuffer[i].set_buffer_length(total_nbr_iteration);
     }
 
     wb_supervisor_field_set_sf_vec3f(wb_supervisor_node_get_field(wb_supervisor_node_get_from_def("SOURCE_ODOR_0"),"translation"), source_position);
@@ -193,7 +195,7 @@ void change_number_of_sensors(){
         }\n", i, 3.0+(rand()/(double)RAND_MAX)*10.0, (rand()/(double)RAND_MAX)*4.0, i, i);
     }
     fclose(wbo_file);
-
+    /*
     //open txt file and make the necessary modifications
     FILE * wbo_file_w = fopen("../../protos/sensor_wind_receiver.wbo", "w");
     fprintf(wbo_file_w, "#VRML_OBJ R2019b utf8\n");
@@ -223,9 +225,10 @@ void change_number_of_sensors(){
         }\n", i, 3.0+(rand()/(double)RAND_MAX)*10.0, (rand()/(double)RAND_MAX)*4.0, i, i+SENSOR_NUM_MAX);
     }
     fclose(wbo_file_w);
+    */
 
     //add the node to the scene tree
-    //wb_supervisor_field_import_mf_node(root_children_field, -1, "../../protos/sensor_odor_receiver.wbo");
+     wb_supervisor_field_import_mf_node(root_children_field, -1, "../../protos/sensor_odor_receiver.wbo");
     
     //exit to start again
     printf("number of sensors changed successfully, now close and run again the simulation.\n");
@@ -307,11 +310,10 @@ bool still_wait(){
 
 int main() {
     int i = 0;
-    int n_samples = 0;
-    int wait = 200;
+    int wait = 25;
 
     init();
-    
+  
     //Get the sensor values and write them in a file
     while(iteration < total_nbr_iteration){
         if(wait > 0){
@@ -324,59 +326,45 @@ int main() {
             // }
         }
         else{
-            //SAMPLE
-            if(n_samples < ODOR_FILTER_LENGTH){
-                for(i=0; i < sensor_number; i++){
-                    //continue measuring odor concentration
-                    sampleBuffer[i].instant_concentration = odor_read(i);
-                    //printf("odor sensor %d -> %f \n", i, sampleBuffer[i].instant_concentration);
-                    //wind 
-                    //wind_read(i, &sampleBuffer[i].instant_wind_intensity, &sampleBuffer[i].instant_wind_angle);
-                    //printf("wind sensor %d -> %f %f\n", i, sampleBuffer[i].instant_wind_intensity, sampleBuffer[i].instant_wind_angle);
-                    sampleBuffer[i].add_odor_to_buffer();
-                }
-                n_samples++;
-            }else{
+            // write instant concentration in sampleBuffer[i] (size = nb_iterations)
+            for(i=0; i < sensor_number; i++){
+                //continue measuring odor concentration
+                sampleBuffer[i].instant_concentration = odor_read(i);
+                //printf("odor sensor %d -> %f \n", i, sampleBuffer[i].instant_concentration);
+                sampleBuffer[i].add_odor_to_buffer();
+            }
+
             //LOG
 
-                //read sensors' data and log
-                char logfilename[50];
-                sprintf(logfilename, "../../log/spx%f_spy%f.csv", source_position[0], source_position[1]);
-                // TODO: creat the file if not exist, check the avaibility before write
-                FILE * data_base = fopen(logfilename, "a");
-                // if (!data_base){
-                   // printf("Error opening files in log\n");
-                   // continue;
-                // }
-                for(i=0; i < sensor_number; i++){
-                    //take the average
-                    sampleBuffer[i].average_odor();
-                    //log in the data_base
-                    fprintf(data_base, "%f, %f, %f, %f, %f, %f, %f, %f\n", 
-                        source_position[0], source_position[1], source_position[2],                  // Sx, Sy, Sz,
-                        sensor_position[i][0], sensor_position[i][1], sensor_position[i][2],            // px, py, pz,
-                        sampleBuffer[i].average_concentration, sampleBuffer[i].stdDev_concentration);   // C, stdC
-                }
-                fclose(data_base);
-                printf("Iteration %d over\n", iteration+1);
-                                
-                n_samples = 0;
-                iteration++;
-
-                // reshuffle sensors for next iteration
-                for (i=0; i<SENSOR_NUM_MAX; i++){
-                    //find the initial sensor position
-                    set_sensor_position(i, sensor_position[i]);
-                    //apply the position to both the odor sensor and wind sensor of ID i
-                    place_sensor(i, sensor_position[i]);
-                    //reset the buffer of sensor for next iteration
-                    sampleBuffer[i].reset_all();
-                }
+            //read sensors' data and log
+            char logfilename[50];
+            sprintf(logfilename, "../../log/spx%f_spy%f.csv", source_position[0], source_position[1]);
+            // TODO: create the file if not exist, check the avaibility before write
+            FILE * data_base = fopen(logfilename, "a");
+            // if (!data_base){
+               // printf("Error opening files in log\n");
+               // continue;
+            // }
+            for(i=0; i < sensor_number; i++){
+                //log in the data_base
+                //fprintf(data_base, "ca ecrit dans le bon fichier");
+                fprintf(data_base, "%f, ", sampleBuffer[i].instant_concentration);   // C
             }
+            fprintf(data_base, "\n");
+            fclose(data_base);
+            printf("Iteration %d over\n", iteration+1);
+                           
+            iteration++;
+            
         }
         //NEXT
         wb_robot_step(TIME_STEP);
     }
+    //reset the buffer of sensors
+    for (i=0; i<SENSOR_NUM_MAX; i++){
+    sampleBuffer[i].reset_all();
+    }
+    
     printf("FINISHED all %d iterations)\n", total_nbr_iteration);
     wb_supervisor_simulation_quit(EXIT_SUCCESS);
     wb_robot_cleanup();
