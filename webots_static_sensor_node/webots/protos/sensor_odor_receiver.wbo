@@ -1,0 +1,991 @@
+#VRML_OBJ R2019b utf8
+DEF SENSOR_ODOR_0 Receiver {
+        translation 6.370279 1.662505 0.1
+        rotation 1 0 0 -1.5708
+        children [
+            Shape {
+                appearance Appearance {
+                    material Material {
+                        diffuseColor 0 1 0
+                    }
+                }
+                geometry DEF CYLINDER_ODOR Cylinder {
+                    height 0.02
+                    radius 0.01
+                }
+            }
+        ]
+        name "sensor_odor_0"
+        boundingObject USE CYLINDER_ODOR
+        physics Physics {
+        }
+        channel 0
+        }
+DEF SENSOR_ODOR_1 Receiver {
+        translation 9.584066 1.330754 0.1
+        rotation 1 0 0 -1.5708
+        children [
+            Shape {
+                appearance Appearance {
+                    material Material {
+                        diffuseColor 0 1 0
+                    }
+                }
+                geometry DEF CYLINDER_ODOR Cylinder {
+                    height 0.02
+                    radius 0.01
+                }
+            }
+        ]
+        name "sensor_odor_1"
+        boundingObject USE CYLINDER_ODOR
+        physics Physics {
+        }
+        channel 1
+        }
+DEF SENSOR_ODOR_2 Receiver {
+        translation 12.385927 3.903244 0.1
+        rotation 1 0 0 -1.5708
+        children [
+            Shape {
+                appearance Appearance {
+                    material Material {
+                        diffuseColor 0 1 0
+                    }
+                }
+                geometry DEF CYLINDER_ODOR Cylinder {
+                    height 0.02
+                    radius 0.01
+                }
+            }
+        ]
+        name "sensor_odor_2"
+        boundingObject USE CYLINDER_ODOR
+        physics Physics {
+        }
+        channel 2
+        }
+DEF SENSOR_ODOR_3 Receiver {
+        translation 11.336952 1.132013 0.1
+        rotation 1 0 0 -1.5708
+        children [
+            Shape {
+                appearance Appearance {
+                    material Material {
+                        diffuseColor 0 1 0
+                    }
+                }
+                geometry DEF CYLINDER_ODOR Cylinder {
+                    height 0.02
+                    radius 0.01
+                }
+            }
+        ]
+        name "sensor_odor_3"
+        boundingObject USE CYLINDER_ODOR
+        physics Physics {
+        }
+        channel 3
+        }
+DEF SENSOR_ODOR_4 Receiver {
+        translation 5.282204 0.604621 0.1
+        rotation 1 0 0 -1.5708
+        children [
+            Shape {
+                appearance Appearance {
+                    material Material {
+                        diffuseColor 0 1 0
+                    }
+                }
+                geometry DEF CYLINDER_ODOR Cylinder {
+                    height 0.02
+                    radius 0.01
+                }
+            }
+        ]
+        name "sensor_odor_4"
+        boundingObject USE CYLINDER_ODOR
+        physics Physics {
+        }
+        channel 4
+        }
+DEF SENSOR_ODOR_5 Receiver {
+        translation 6.077925 1.009311 0.1
+        rotation 1 0 0 -1.5708
+        children [
+            Shape {
+                appearance Appearance {
+                    material Material {
+                        diffuseColor 0 1 0
+                    }
+                }
+                geometry DEF CYLINDER_ODOR Cylinder {
+                    height 0.02
+                    radius 0.01
+                }
+            }
+        ]
+        name "sensor_odor_5"
+        boundingObject USE CYLINDER_ODOR
+        physics Physics {
+        }
+        channel 5
+        }
+DEF SENSOR_ODOR_6 Receiver {
+        translation 11.939007 0.045485 0.1
+        rotation 1 0 0 -1.5708
+        children [
+            Shape {
+                appearance Appearance {
+                    material Material {
+                        diffuseColor 0 1 0
+                    }
+                }
+                geometry DEF CYLINDER_ODOR Cylinder {
+                    height 0.02
+                    radius 0.01
+                }
+            }
+        ]
+        name "sensor_odor_6"
+        boundingObject USE CYLINDER_ODOR
+        physics Physics {
+        }
+        channel 6
+        }
+DEF SENSOR_ODOR_7 Receiver {
+        translation 9.655730 2.123073 0.1
+        rotation 1 0 0 -1.5708
+        children [
+            Shape {
+                appearance Appearance {
+                    material Material {
+                        diffuseColor 0 1 0
+                    }
+                }
+                geometry DEF CYLINDER_ODOR Cylinder {
+                    height 0.02
+                    radius 0.01
+                }
+            }
+        ]
+        name "sensor_odor_7"
+        boundingObject USE CYLINDER_ODOR
+        physics Physics {
+        }
+        channel 7
+        }
+DEF SENSOR_ODOR_8 Receiver {
+        translation 5.071746 2.231818 0.1
+        rotation 1 0 0 -1.5708
+        children [
+            Shape {
+                appearance Appearance {
+                    material Material {
+                        diffuseColor 0 1 0
+                    }
+                }
+                geometry DEF CYLINDER_ODOR Cylinder {
+                    height 0.02
+                    radius 0.01
+                }
+            }
+        ]
+        name "sensor_odor_8"
+        boundingObject USE CYLINDER_ODOR
+        physics Physics {
+        }
+        channel 8
+        }
+DEF SENSOR_ODOR_9 Receiver {
+        translation 9.236565 1.697379 0.1
+        rotation 1 0 0 -1.5708
+        children [
+            Shape {
+                appearance Appearance {
+                    material Material {
+                        diffuseColor 0 1 0
+                    }
+                }
+                geometry DEF CYLINDER_ODOR Cylinder {
+                    height 0.02
+                    radius 0.01
+                }
+            }
+        ]
+        name "sensor_odor_9"
+        boundingObject USE CYLINDER_ODOR
+        physics Physics {
+        }
+        channel 9
+        }
+DEF SENSOR_ODOR_10 Receiver {
+        translation 12.393976 1.577492 0.1
+        rotation 1 0 0 -1.5708
+        children [
+            Shape {
+                appearance Appearance {
+                    material Material {
+                        diffuseColor 0 1 0
+                    }
+                }
+                geometry DEF CYLINDER_ODOR Cylinder {
+                    height 0.02
+                    radius 0.01
+                }
+            }
+        ]
+        name "sensor_odor_10"
+        boundingObject USE CYLINDER_ODOR
+        physics Physics {
+        }
+        channel 10
+        }
+DEF SENSOR_ODOR_11 Receiver {
+        translation 6.172612 2.971827 0.1
+        rotation 1 0 0 -1.5708
+        children [
+            Shape {
+                appearance Appearance {
+                    material Material {
+                        diffuseColor 0 1 0
+                    }
+                }
+                geometry DEF CYLINDER_ODOR Cylinder {
+                    height 0.02
+                    radius 0.01
+                }
+            }
+        ]
+        name "sensor_odor_11"
+        boundingObject USE CYLINDER_ODOR
+        physics Physics {
+        }
+        channel 11
+        }
+DEF SENSOR_ODOR_12 Receiver {
+        translation 6.095753 3.329007 0.1
+        rotation 1 0 0 -1.5708
+        children [
+            Shape {
+                appearance Appearance {
+                    material Material {
+                        diffuseColor 0 1 0
+                    }
+                }
+                geometry DEF CYLINDER_ODOR Cylinder {
+                    height 0.02
+                    radius 0.01
+                }
+            }
+        ]
+        name "sensor_odor_12"
+        boundingObject USE CYLINDER_ODOR
+        physics Physics {
+        }
+        channel 12
+        }
+DEF SENSOR_ODOR_13 Receiver {
+        translation 11.545737 2.841825 0.1
+        rotation 1 0 0 -1.5708
+        children [
+            Shape {
+                appearance Appearance {
+                    material Material {
+                        diffuseColor 0 1 0
+                    }
+                }
+                geometry DEF CYLINDER_ODOR Cylinder {
+                    height 0.02
+                    radius 0.01
+                }
+            }
+        ]
+        name "sensor_odor_13"
+        boundingObject USE CYLINDER_ODOR
+        physics Physics {
+        }
+        channel 13
+        }
+DEF SENSOR_ODOR_14 Receiver {
+        translation 6.234955 1.636089 0.1
+        rotation 1 0 0 -1.5708
+        children [
+            Shape {
+                appearance Appearance {
+                    material Material {
+                        diffuseColor 0 1 0
+                    }
+                }
+                geometry DEF CYLINDER_ODOR Cylinder {
+                    height 0.02
+                    radius 0.01
+                }
+            }
+        ]
+        name "sensor_odor_14"
+        boundingObject USE CYLINDER_ODOR
+        physics Physics {
+        }
+        channel 14
+        }
+DEF SENSOR_ODOR_15 Receiver {
+        translation 11.246484 1.646178 0.1
+        rotation 1 0 0 -1.5708
+        children [
+            Shape {
+                appearance Appearance {
+                    material Material {
+                        diffuseColor 0 1 0
+                    }
+                }
+                geometry DEF CYLINDER_ODOR Cylinder {
+                    height 0.02
+                    radius 0.01
+                }
+            }
+        ]
+        name "sensor_odor_15"
+        boundingObject USE CYLINDER_ODOR
+        physics Physics {
+        }
+        channel 15
+        }
+DEF SENSOR_ODOR_16 Receiver {
+        translation 10.442329 2.642094 0.1
+        rotation 1 0 0 -1.5708
+        children [
+            Shape {
+                appearance Appearance {
+                    material Material {
+                        diffuseColor 0 1 0
+                    }
+                }
+                geometry DEF CYLINDER_ODOR Cylinder {
+                    height 0.02
+                    radius 0.01
+                }
+            }
+        ]
+        name "sensor_odor_16"
+        boundingObject USE CYLINDER_ODOR
+        physics Physics {
+        }
+        channel 16
+        }
+DEF SENSOR_ODOR_17 Receiver {
+        translation 9.363345 1.932220 0.1
+        rotation 1 0 0 -1.5708
+        children [
+            Shape {
+                appearance Appearance {
+                    material Material {
+                        diffuseColor 0 1 0
+                    }
+                }
+                geometry DEF CYLINDER_ODOR Cylinder {
+                    height 0.02
+                    radius 0.01
+                }
+            }
+        ]
+        name "sensor_odor_17"
+        boundingObject USE CYLINDER_ODOR
+        physics Physics {
+        }
+        channel 17
+        }
+DEF SENSOR_ODOR_18 Receiver {
+        translation 10.660584 2.731302 0.1
+        rotation 1 0 0 -1.5708
+        children [
+            Shape {
+                appearance Appearance {
+                    material Material {
+                        diffuseColor 0 1 0
+                    }
+                }
+                geometry DEF CYLINDER_ODOR Cylinder {
+                    height 0.02
+                    radius 0.01
+                }
+            }
+        ]
+        name "sensor_odor_18"
+        boundingObject USE CYLINDER_ODOR
+        physics Physics {
+        }
+        channel 18
+        }
+DEF SENSOR_ODOR_19 Receiver {
+        translation 11.339808 1.880119 0.1
+        rotation 1 0 0 -1.5708
+        children [
+            Shape {
+                appearance Appearance {
+                    material Material {
+                        diffuseColor 0 1 0
+                    }
+                }
+                geometry DEF CYLINDER_ODOR Cylinder {
+                    height 0.02
+                    radius 0.01
+                }
+            }
+        ]
+        name "sensor_odor_19"
+        boundingObject USE CYLINDER_ODOR
+        physics Physics {
+        }
+        channel 19
+        }
+DEF SENSOR_ODOR_20 Receiver {
+        translation 10.223576 3.977115 0.1
+        rotation 1 0 0 -1.5708
+        children [
+            Shape {
+                appearance Appearance {
+                    material Material {
+                        diffuseColor 0 1 0
+                    }
+                }
+                geometry DEF CYLINDER_ODOR Cylinder {
+                    height 0.02
+                    radius 0.01
+                }
+            }
+        ]
+        name "sensor_odor_20"
+        boundingObject USE CYLINDER_ODOR
+        physics Physics {
+        }
+        channel 20
+        }
+DEF SENSOR_ODOR_21 Receiver {
+        translation 3.056501 0.567093 0.1
+        rotation 1 0 0 -1.5708
+        children [
+            Shape {
+                appearance Appearance {
+                    material Material {
+                        diffuseColor 0 1 0
+                    }
+                }
+                geometry DEF CYLINDER_ODOR Cylinder {
+                    height 0.02
+                    radius 0.01
+                }
+            }
+        ]
+        name "sensor_odor_21"
+        boundingObject USE CYLINDER_ODOR
+        physics Physics {
+        }
+        channel 21
+        }
+DEF SENSOR_ODOR_22 Receiver {
+        translation 9.725414 2.465033 0.1
+        rotation 1 0 0 -1.5708
+        children [
+            Shape {
+                appearance Appearance {
+                    material Material {
+                        diffuseColor 0 1 0
+                    }
+                }
+                geometry DEF CYLINDER_ODOR Cylinder {
+                    height 0.02
+                    radius 0.01
+                }
+            }
+        ]
+        name "sensor_odor_22"
+        boundingObject USE CYLINDER_ODOR
+        physics Physics {
+        }
+        channel 22
+        }
+DEF SENSOR_ODOR_23 Receiver {
+        translation 4.742127 2.684892 0.1
+        rotation 1 0 0 -1.5708
+        children [
+            Shape {
+                appearance Appearance {
+                    material Material {
+                        diffuseColor 0 1 0
+                    }
+                }
+                geometry DEF CYLINDER_ODOR Cylinder {
+                    height 0.02
+                    radius 0.01
+                }
+            }
+        ]
+        name "sensor_odor_23"
+        boundingObject USE CYLINDER_ODOR
+        physics Physics {
+        }
+        channel 23
+        }
+DEF SENSOR_ODOR_24 Receiver {
+        translation 3.955679 3.518864 0.1
+        rotation 1 0 0 -1.5708
+        children [
+            Shape {
+                appearance Appearance {
+                    material Material {
+                        diffuseColor 0 1 0
+                    }
+                }
+                geometry DEF CYLINDER_ODOR Cylinder {
+                    height 0.02
+                    radius 0.01
+                }
+            }
+        ]
+        name "sensor_odor_24"
+        boundingObject USE CYLINDER_ODOR
+        physics Physics {
+        }
+        channel 24
+        }
+DEF SENSOR_ODOR_25 Receiver {
+        translation 5.740891 3.191477 0.1
+        rotation 1 0 0 -1.5708
+        children [
+            Shape {
+                appearance Appearance {
+                    material Material {
+                        diffuseColor 0 1 0
+                    }
+                }
+                geometry DEF CYLINDER_ODOR Cylinder {
+                    height 0.02
+                    radius 0.01
+                }
+            }
+        ]
+        name "sensor_odor_25"
+        boundingObject USE CYLINDER_ODOR
+        physics Physics {
+        }
+        channel 25
+        }
+DEF SENSOR_ODOR_26 Receiver {
+        translation 8.408260 0.139862 0.1
+        rotation 1 0 0 -1.5708
+        children [
+            Shape {
+                appearance Appearance {
+                    material Material {
+                        diffuseColor 0 1 0
+                    }
+                }
+                geometry DEF CYLINDER_ODOR Cylinder {
+                    height 0.02
+                    radius 0.01
+                }
+            }
+        ]
+        name "sensor_odor_26"
+        boundingObject USE CYLINDER_ODOR
+        physics Physics {
+        }
+        channel 26
+        }
+DEF SENSOR_ODOR_27 Receiver {
+        translation 11.672172 2.365401 0.1
+        rotation 1 0 0 -1.5708
+        children [
+            Shape {
+                appearance Appearance {
+                    material Material {
+                        diffuseColor 0 1 0
+                    }
+                }
+                geometry DEF CYLINDER_ODOR Cylinder {
+                    height 0.02
+                    radius 0.01
+                }
+            }
+        ]
+        name "sensor_odor_27"
+        boundingObject USE CYLINDER_ODOR
+        physics Physics {
+        }
+        channel 27
+        }
+DEF SENSOR_ODOR_28 Receiver {
+        translation 6.018065 3.401605 0.1
+        rotation 1 0 0 -1.5708
+        children [
+            Shape {
+                appearance Appearance {
+                    material Material {
+                        diffuseColor 0 1 0
+                    }
+                }
+                geometry DEF CYLINDER_ODOR Cylinder {
+                    height 0.02
+                    radius 0.01
+                }
+            }
+        ]
+        name "sensor_odor_28"
+        boundingObject USE CYLINDER_ODOR
+        physics Physics {
+        }
+        channel 28
+        }
+DEF SENSOR_ODOR_29 Receiver {
+        translation 5.594235 2.887163 0.1
+        rotation 1 0 0 -1.5708
+        children [
+            Shape {
+                appearance Appearance {
+                    material Material {
+                        diffuseColor 0 1 0
+                    }
+                }
+                geometry DEF CYLINDER_ODOR Cylinder {
+                    height 0.02
+                    radius 0.01
+                }
+            }
+        ]
+        name "sensor_odor_29"
+        boundingObject USE CYLINDER_ODOR
+        physics Physics {
+        }
+        channel 29
+        }
+DEF SENSOR_ODOR_30 Receiver {
+        translation 4.333353 2.501208 0.1
+        rotation 1 0 0 -1.5708
+        children [
+            Shape {
+                appearance Appearance {
+                    material Material {
+                        diffuseColor 0 1 0
+                    }
+                }
+                geometry DEF CYLINDER_ODOR Cylinder {
+                    height 0.02
+                    radius 0.01
+                }
+            }
+        ]
+        name "sensor_odor_30"
+        boundingObject USE CYLINDER_ODOR
+        physics Physics {
+        }
+        channel 30
+        }
+DEF SENSOR_ODOR_31 Receiver {
+        translation 5.858255 0.336288 0.1
+        rotation 1 0 0 -1.5708
+        children [
+            Shape {
+                appearance Appearance {
+                    material Material {
+                        diffuseColor 0 1 0
+                    }
+                }
+                geometry DEF CYLINDER_ODOR Cylinder {
+                    height 0.02
+                    radius 0.01
+                }
+            }
+        ]
+        name "sensor_odor_31"
+        boundingObject USE CYLINDER_ODOR
+        physics Physics {
+        }
+        channel 31
+        }
+DEF SENSOR_ODOR_32 Receiver {
+        translation 8.671270 3.510273 0.1
+        rotation 1 0 0 -1.5708
+        children [
+            Shape {
+                appearance Appearance {
+                    material Material {
+                        diffuseColor 0 1 0
+                    }
+                }
+                geometry DEF CYLINDER_ODOR Cylinder {
+                    height 0.02
+                    radius 0.01
+                }
+            }
+        ]
+        name "sensor_odor_32"
+        boundingObject USE CYLINDER_ODOR
+        physics Physics {
+        }
+        channel 32
+        }
+DEF SENSOR_ODOR_33 Receiver {
+        translation 8.603938 3.688640 0.1
+        rotation 1 0 0 -1.5708
+        children [
+            Shape {
+                appearance Appearance {
+                    material Material {
+                        diffuseColor 0 1 0
+                    }
+                }
+                geometry DEF CYLINDER_ODOR Cylinder {
+                    height 0.02
+                    radius 0.01
+                }
+            }
+        ]
+        name "sensor_odor_33"
+        boundingObject USE CYLINDER_ODOR
+        physics Physics {
+        }
+        channel 33
+        }
+DEF SENSOR_ODOR_34 Receiver {
+        translation 6.921898 1.332742 0.1
+        rotation 1 0 0 -1.5708
+        children [
+            Shape {
+                appearance Appearance {
+                    material Material {
+                        diffuseColor 0 1 0
+                    }
+                }
+                geometry DEF CYLINDER_ODOR Cylinder {
+                    height 0.02
+                    radius 0.01
+                }
+            }
+        ]
+        name "sensor_odor_34"
+        boundingObject USE CYLINDER_ODOR
+        physics Physics {
+        }
+        channel 34
+        }
+DEF SENSOR_ODOR_35 Receiver {
+        translation 6.274643 1.577498 0.1
+        rotation 1 0 0 -1.5708
+        children [
+            Shape {
+                appearance Appearance {
+                    material Material {
+                        diffuseColor 0 1 0
+                    }
+                }
+                geometry DEF CYLINDER_ODOR Cylinder {
+                    height 0.02
+                    radius 0.01
+                }
+            }
+        ]
+        name "sensor_odor_35"
+        boundingObject USE CYLINDER_ODOR
+        physics Physics {
+        }
+        channel 35
+        }
+DEF SENSOR_ODOR_36 Receiver {
+        translation 8.361479 0.458190 0.1
+        rotation 1 0 0 -1.5708
+        children [
+            Shape {
+                appearance Appearance {
+                    material Material {
+                        diffuseColor 0 1 0
+                    }
+                }
+                geometry DEF CYLINDER_ODOR Cylinder {
+                    height 0.02
+                    radius 0.01
+                }
+            }
+        ]
+        name "sensor_odor_36"
+        boundingObject USE CYLINDER_ODOR
+        physics Physics {
+        }
+        channel 36
+        }
+DEF SENSOR_ODOR_37 Receiver {
+        translation 10.308058 1.332458 0.1
+        rotation 1 0 0 -1.5708
+        children [
+            Shape {
+                appearance Appearance {
+                    material Material {
+                        diffuseColor 0 1 0
+                    }
+                }
+                geometry DEF CYLINDER_ODOR Cylinder {
+                    height 0.02
+                    radius 0.01
+                }
+            }
+        ]
+        name "sensor_odor_37"
+        boundingObject USE CYLINDER_ODOR
+        physics Physics {
+        }
+        channel 37
+        }
+DEF SENSOR_ODOR_38 Receiver {
+        translation 3.043375 0.834757 0.1
+        rotation 1 0 0 -1.5708
+        children [
+            Shape {
+                appearance Appearance {
+                    material Material {
+                        diffuseColor 0 1 0
+                    }
+                }
+                geometry DEF CYLINDER_ODOR Cylinder {
+                    height 0.02
+                    radius 0.01
+                }
+            }
+        ]
+        name "sensor_odor_38"
+        boundingObject USE CYLINDER_ODOR
+        physics Physics {
+        }
+        channel 38
+        }
+DEF SENSOR_ODOR_39 Receiver {
+        translation 3.884053 3.620074 0.1
+        rotation 1 0 0 -1.5708
+        children [
+            Shape {
+                appearance Appearance {
+                    material Material {
+                        diffuseColor 0 1 0
+                    }
+                }
+                geometry DEF CYLINDER_ODOR Cylinder {
+                    height 0.02
+                    radius 0.01
+                }
+            }
+        ]
+        name "sensor_odor_39"
+        boundingObject USE CYLINDER_ODOR
+        physics Physics {
+        }
+        channel 39
+        }
+DEF SENSOR_ODOR_40 Receiver {
+        translation 10.028877 0.399622 0.1
+        rotation 1 0 0 -1.5708
+        children [
+            Shape {
+                appearance Appearance {
+                    material Material {
+                        diffuseColor 0 1 0
+                    }
+                }
+                geometry DEF CYLINDER_ODOR Cylinder {
+                    height 0.02
+                    radius 0.01
+                }
+            }
+        ]
+        name "sensor_odor_40"
+        boundingObject USE CYLINDER_ODOR
+        physics Physics {
+        }
+        channel 40
+        }
+DEF SENSOR_ODOR_41 Receiver {
+        translation 4.348709 1.449978 0.1
+        rotation 1 0 0 -1.5708
+        children [
+            Shape {
+                appearance Appearance {
+                    material Material {
+                        diffuseColor 0 1 0
+                    }
+                }
+                geometry DEF CYLINDER_ODOR Cylinder {
+                    height 0.02
+                    radius 0.01
+                }
+            }
+        ]
+        name "sensor_odor_41"
+        boundingObject USE CYLINDER_ODOR
+        physics Physics {
+        }
+        channel 41
+        }
+DEF SENSOR_ODOR_42 Receiver {
+        translation 12.538447 0.974855 0.1
+        rotation 1 0 0 -1.5708
+        children [
+            Shape {
+                appearance Appearance {
+                    material Material {
+                        diffuseColor 0 1 0
+                    }
+                }
+                geometry DEF CYLINDER_ODOR Cylinder {
+                    height 0.02
+                    radius 0.01
+                }
+            }
+        ]
+        name "sensor_odor_42"
+        boundingObject USE CYLINDER_ODOR
+        physics Physics {
+        }
+        channel 42
+        }
+DEF SENSOR_ODOR_43 Receiver {
+        translation 3.941150 0.008352 0.1
+        rotation 1 0 0 -1.5708
+        children [
+            Shape {
+                appearance Appearance {
+                    material Material {
+                        diffuseColor 0 1 0
+                    }
+                }
+                geometry DEF CYLINDER_ODOR Cylinder {
+                    height 0.02
+                    radius 0.01
+                }
+            }
+        ]
+        name "sensor_odor_43"
+        boundingObject USE CYLINDER_ODOR
+        physics Physics {
+        }
+        channel 43
+        }
+DEF SENSOR_ODOR_44 Receiver {
+        translation 10.238788 1.022605 0.1
+        rotation 1 0 0 -1.5708
+        children [
+            Shape {
+                appearance Appearance {
+                    material Material {
+                        diffuseColor 0 1 0
+                    }
+                }
+                geometry DEF CYLINDER_ODOR Cylinder {
+                    height 0.02
+                    radius 0.01
+                }
+            }
+        ]
+        name "sensor_odor_44"
+        boundingObject USE CYLINDER_ODOR
+        physics Physics {
+        }
+        channel 44
+        }
