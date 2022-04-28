@@ -36,6 +36,7 @@
 *.wbproj
 *.d
 *Makefile
+**/build
 
 # Folders
 log

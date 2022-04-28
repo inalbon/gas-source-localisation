@@ -1,3 +1,4 @@
+#VRML_SIM R2021B utf8
 # Physics-based model of the Khepera III robot (K-Team Corp.) wind, odor, gpd and compass added.
 
 PROTO Khepera3plus [

@@ -12,7 +12,7 @@ WorldInfo {
 }
 Viewpoint {
   orientation -0.007534515803796727 -0.031811980885791756 0.9994654716115633 3.148946166187109
-  position 7.383518640645816 0.024815844697655187 26.110424730428317
+  position 7.456621604920941 -0.23736141397142074 29.29593350499795
 }
 Background {
   skyColor [
@@ -164,6 +164,7 @@ Solid {
   boundingObject USE WALL_SHAPE2
 }
 DEF ODOR_SUP Robot {
+  translation 0.5 2 0
   children [
     Transform {
       children [
@@ -32808,7 +32809,7 @@ DEF ODOR_SUP Robot {
     }
   ]
   name "odor_sup"
-  controller ""
+  controller "odor_super"
   supervisor TRUE
 }
 DEF Static_Sensor_Network Robot {

@@ -1,6 +1,6 @@
 #VRML_OBJ R2019b utf8
 DEF SENSOR_ODOR_0 Receiver {
-        translation 6.370279 1.662505 0.1
+        translation 5.250050 2.082945 0.1
         rotation 1 0 0 -1.5708
         children [
             Shape {
@@ -22,7 +22,7 @@ DEF SENSOR_ODOR_0 Receiver {
         channel 0
         }
 DEF SENSOR_ODOR_1 Receiver {
-        translation 9.584066 1.330754 0.1
+        translation 8.237006 2.878436 0.1
         rotation 1 0 0 -1.5708
         children [
             Shape {
@@ -44,7 +44,7 @@ DEF SENSOR_ODOR_1 Receiver {
         channel 1
         }
 DEF SENSOR_ODOR_2 Receiver {
-        translation 12.385927 3.903244 0.1
+        translation 4.286525 0.197830 0.1
         rotation 1 0 0 -1.5708
         children [
             Shape {
@@ -66,7 +66,7 @@ DEF SENSOR_ODOR_2 Receiver {
         channel 2
         }
 DEF SENSOR_ODOR_3 Receiver {
-        translation 11.336952 1.132013 0.1
+        translation 6.809005 2.029071 0.1
         rotation 1 0 0 -1.5708
         children [
             Shape {
@@ -88,7 +88,7 @@ DEF SENSOR_ODOR_3 Receiver {
         channel 3
         }
 DEF SENSOR_ODOR_4 Receiver {
-        translation 5.282204 0.604621 0.1
+        translation 9.552701 2.987541 0.1
         rotation 1 0 0 -1.5708
         children [
             Shape {
@@ -110,7 +110,7 @@ DEF SENSOR_ODOR_4 Receiver {
         channel 4
         }
 DEF SENSOR_ODOR_5 Receiver {
-        translation 6.077925 1.009311 0.1
+        translation 4.807460 0.764726 0.1
         rotation 1 0 0 -1.5708
         children [
             Shape {
@@ -132,7 +132,7 @@ DEF SENSOR_ODOR_5 Receiver {
         channel 5
         }
 DEF SENSOR_ODOR_6 Receiver {
-        translation 11.939007 0.045485 0.1
+        translation 5.931697 1.514580 0.1
         rotation 1 0 0 -1.5708
         children [
             Shape {
@@ -154,7 +154,7 @@ DEF SENSOR_ODOR_6 Receiver {
         channel 6
         }
 DEF SENSOR_ODOR_7 Receiver {
-        translation 9.655730 2.123073 0.1
+        translation 7.791877 0.394100 0.1
         rotation 1 0 0 -1.5708
         children [
             Shape {
@@ -176,7 +176,7 @@ DEF SENSOR_ODOR_7 Receiver {
         channel 7
         }
 DEF SENSOR_ODOR_8 Receiver {
-        translation 5.071746 2.231818 0.1
+        translation 8.175061 2.709571 0.1
         rotation 1 0 0 -1.5708
         children [
             Shape {
@@ -198,7 +198,7 @@ DEF SENSOR_ODOR_8 Receiver {
         channel 8
         }
 DEF SENSOR_ODOR_9 Receiver {
-        translation 9.236565 1.697379 0.1
+        translation 10.248943 2.080971 0.1
         rotation 1 0 0 -1.5708
         children [
             Shape {
@@ -220,7 +220,7 @@ DEF SENSOR_ODOR_9 Receiver {
         channel 9
         }
 DEF SENSOR_ODOR_10 Receiver {
-        translation 12.393976 1.577492 0.1
+        translation 11.860108 0.245826 0.1
         rotation 1 0 0 -1.5708
         children [
             Shape {
@@ -242,7 +242,7 @@ DEF SENSOR_ODOR_10 Receiver {
         channel 10
         }
 DEF SENSOR_ODOR_11 Receiver {
-        translation 6.172612 2.971827 0.1
+        translation 10.507675 2.302112 0.1
         rotation 1 0 0 -1.5708
         children [
             Shape {
@@ -264,7 +264,7 @@ DEF SENSOR_ODOR_11 Receiver {
         channel 11
         }
 DEF SENSOR_ODOR_12 Receiver {
-        translation 6.095753 3.329007 0.1
+        translation 9.739717 1.897725 0.1
         rotation 1 0 0 -1.5708
         children [
             Shape {
@@ -286,7 +286,7 @@ DEF SENSOR_ODOR_12 Receiver {
         channel 12
         }
 DEF SENSOR_ODOR_13 Receiver {
-        translation 11.545737 2.841825 0.1
+        translation 5.194578 1.657196 0.1
         rotation 1 0 0 -1.5708
         children [
             Shape {
@@ -308,7 +308,7 @@ DEF SENSOR_ODOR_13 Receiver {
         channel 13
         }
 DEF SENSOR_ODOR_14 Receiver {
-        translation 6.234955 1.636089 0.1
+        translation 8.251496 2.746669 0.1
         rotation 1 0 0 -1.5708
         children [
             Shape {
@@ -330,7 +330,7 @@ DEF SENSOR_ODOR_14 Receiver {
         channel 14
         }
 DEF SENSOR_ODOR_15 Receiver {
-        translation 11.246484 1.646178 0.1
+        translation 5.074036 0.062092 0.1
         rotation 1 0 0 -1.5708
         children [
             Shape {
@@ -352,7 +352,7 @@ DEF SENSOR_ODOR_15 Receiver {
         channel 15
         }
 DEF SENSOR_ODOR_16 Receiver {
-        translation 10.442329 2.642094 0.1
+        translation 10.351321 3.000618 0.1
         rotation 1 0 0 -1.5708
         children [
             Shape {
@@ -374,7 +374,7 @@ DEF SENSOR_ODOR_16 Receiver {
         channel 16
         }
 DEF SENSOR_ODOR_17 Receiver {
-        translation 9.363345 1.932220 0.1
+        translation 10.996120 2.924417 0.1
         rotation 1 0 0 -1.5708
         children [
             Shape {
@@ -396,7 +396,7 @@ DEF SENSOR_ODOR_17 Receiver {
         channel 17
         }
 DEF SENSOR_ODOR_18 Receiver {
-        translation 10.660584 2.731302 0.1
+        translation 5.383718 3.455138 0.1
         rotation 1 0 0 -1.5708
         children [
             Shape {
@@ -418,7 +418,7 @@ DEF SENSOR_ODOR_18 Receiver {
         channel 18
         }
 DEF SENSOR_ODOR_19 Receiver {
-        translation 11.339808 1.880119 0.1
+        translation 9.106697 0.722050 0.1
         rotation 1 0 0 -1.5708
         children [
             Shape {
@@ -440,7 +440,7 @@ DEF SENSOR_ODOR_19 Receiver {
         channel 19
         }
 DEF SENSOR_ODOR_20 Receiver {
-        translation 10.223576 3.977115 0.1
+        translation 6.716941 3.574568 0.1
         rotation 1 0 0 -1.5708
         children [
             Shape {
@@ -462,7 +462,7 @@ DEF SENSOR_ODOR_20 Receiver {
         channel 20
         }
 DEF SENSOR_ODOR_21 Receiver {
-        translation 3.056501 0.567093 0.1
+        translation 5.722868 3.165663 0.1
         rotation 1 0 0 -1.5708
         children [
             Shape {
@@ -484,7 +484,7 @@ DEF SENSOR_ODOR_21 Receiver {
         channel 21
         }
 DEF SENSOR_ODOR_22 Receiver {
-        translation 9.725414 2.465033 0.1
+        translation 11.899407 2.659455 0.1
         rotation 1 0 0 -1.5708
         children [
             Shape {
@@ -506,7 +506,7 @@ DEF SENSOR_ODOR_22 Receiver {
         channel 22
         }
 DEF SENSOR_ODOR_23 Receiver {
-        translation 4.742127 2.684892 0.1
+        translation 6.422564 3.005898 0.1
         rotation 1 0 0 -1.5708
         children [
             Shape {
@@ -528,7 +528,7 @@ DEF SENSOR_ODOR_23 Receiver {
         channel 23
         }
 DEF SENSOR_ODOR_24 Receiver {
-        translation 3.955679 3.518864 0.1
+        translation 5.717171 1.629787 0.1
         rotation 1 0 0 -1.5708
         children [
             Shape {
@@ -550,7 +550,7 @@ DEF SENSOR_ODOR_24 Receiver {
         channel 24
         }
 DEF SENSOR_ODOR_25 Receiver {
-        translation 5.740891 3.191477 0.1
+        translation 7.689032 0.268603 0.1
         rotation 1 0 0 -1.5708
         children [
             Shape {
@@ -572,7 +572,7 @@ DEF SENSOR_ODOR_25 Receiver {
         channel 25
         }
 DEF SENSOR_ODOR_26 Receiver {
-        translation 8.408260 0.139862 0.1
+        translation 9.426787 0.630912 0.1
         rotation 1 0 0 -1.5708
         children [
             Shape {
@@ -594,7 +594,7 @@ DEF SENSOR_ODOR_26 Receiver {
         channel 26
         }
 DEF SENSOR_ODOR_27 Receiver {
-        translation 11.672172 2.365401 0.1
+        translation 9.321592 0.878683 0.1
         rotation 1 0 0 -1.5708
         children [
             Shape {
@@ -616,7 +616,7 @@ DEF SENSOR_ODOR_27 Receiver {
         channel 27
         }
 DEF SENSOR_ODOR_28 Receiver {
-        translation 6.018065 3.401605 0.1
+        translation 9.339698 1.266602 0.1
         rotation 1 0 0 -1.5708
         children [
             Shape {
@@ -638,7 +638,7 @@ DEF SENSOR_ODOR_28 Receiver {
         channel 28
         }
 DEF SENSOR_ODOR_29 Receiver {
-        translation 5.594235 2.887163 0.1
+        translation 3.033177 3.406468 0.1
         rotation 1 0 0 -1.5708
         children [
             Shape {
@@ -660,7 +660,7 @@ DEF SENSOR_ODOR_29 Receiver {
         channel 29
         }
 DEF SENSOR_ODOR_30 Receiver {
-        translation 4.333353 2.501208 0.1
+        translation 11.671401 0.636477 0.1
         rotation 1 0 0 -1.5708
         children [
             Shape {
@@ -682,7 +682,7 @@ DEF SENSOR_ODOR_30 Receiver {
         channel 30
         }
 DEF SENSOR_ODOR_31 Receiver {
-        translation 5.858255 0.336288 0.1
+        translation 12.092738 0.842885 0.1
         rotation 1 0 0 -1.5708
         children [
             Shape {
@@ -704,7 +704,7 @@ DEF SENSOR_ODOR_31 Receiver {
         channel 31
         }
 DEF SENSOR_ODOR_32 Receiver {
-        translation 8.671270 3.510273 0.1
+        translation 12.418254 2.409089 0.1
         rotation 1 0 0 -1.5708
         children [
             Shape {
@@ -726,7 +726,7 @@ DEF SENSOR_ODOR_32 Receiver {
         channel 32
         }
 DEF SENSOR_ODOR_33 Receiver {
-        translation 8.603938 3.688640 0.1
+        translation 7.660568 2.835544 0.1
         rotation 1 0 0 -1.5708
         children [
             Shape {
@@ -748,7 +748,7 @@ DEF SENSOR_ODOR_33 Receiver {
         channel 33
         }
 DEF SENSOR_ODOR_34 Receiver {
-        translation 6.921898 1.332742 0.1
+        translation 11.893984 0.720789 0.1
         rotation 1 0 0 -1.5708
         children [
             Shape {
@@ -770,7 +770,7 @@ DEF SENSOR_ODOR_34 Receiver {
         channel 34
         }
 DEF SENSOR_ODOR_35 Receiver {
-        translation 6.274643 1.577498 0.1
+        translation 3.738391 0.306906 0.1
         rotation 1 0 0 -1.5708
         children [
             Shape {
@@ -792,7 +792,7 @@ DEF SENSOR_ODOR_35 Receiver {
         channel 35
         }
 DEF SENSOR_ODOR_36 Receiver {
-        translation 8.361479 0.458190 0.1
+        translation 11.681422 1.044370 0.1
         rotation 1 0 0 -1.5708
         children [
             Shape {
@@ -814,7 +814,7 @@ DEF SENSOR_ODOR_36 Receiver {
         channel 36
         }
 DEF SENSOR_ODOR_37 Receiver {
-        translation 10.308058 1.332458 0.1
+        translation 12.259562 1.384504 0.1
         rotation 1 0 0 -1.5708
         children [
             Shape {
@@ -836,7 +836,7 @@ DEF SENSOR_ODOR_37 Receiver {
         channel 37
         }
 DEF SENSOR_ODOR_38 Receiver {
-        translation 3.043375 0.834757 0.1
+        translation 3.976004 3.032331 0.1
         rotation 1 0 0 -1.5708
         children [
             Shape {
@@ -858,7 +858,7 @@ DEF SENSOR_ODOR_38 Receiver {
         channel 38
         }
 DEF SENSOR_ODOR_39 Receiver {
-        translation 3.884053 3.620074 0.1
+        translation 4.655296 1.072850 0.1
         rotation 1 0 0 -1.5708
         children [
             Shape {
@@ -880,7 +880,7 @@ DEF SENSOR_ODOR_39 Receiver {
         channel 39
         }
 DEF SENSOR_ODOR_40 Receiver {
-        translation 10.028877 0.399622 0.1
+        translation 6.353633 1.477270 0.1
         rotation 1 0 0 -1.5708
         children [
             Shape {
@@ -902,7 +902,7 @@ DEF SENSOR_ODOR_40 Receiver {
         channel 40
         }
 DEF SENSOR_ODOR_41 Receiver {
-        translation 4.348709 1.449978 0.1
+        translation 8.270455 2.537731 0.1
         rotation 1 0 0 -1.5708
         children [
             Shape {
@@ -924,7 +924,7 @@ DEF SENSOR_ODOR_41 Receiver {
         channel 41
         }
 DEF SENSOR_ODOR_42 Receiver {
-        translation 12.538447 0.974855 0.1
+        translation 11.541035 3.912168 0.1
         rotation 1 0 0 -1.5708
         children [
             Shape {
@@ -946,7 +946,7 @@ DEF SENSOR_ODOR_42 Receiver {
         channel 42
         }
 DEF SENSOR_ODOR_43 Receiver {
-        translation 3.941150 0.008352 0.1
+        translation 5.946924 0.636819 0.1
         rotation 1 0 0 -1.5708
         children [
             Shape {
@@ -968,7 +968,7 @@ DEF SENSOR_ODOR_43 Receiver {
         channel 43
         }
 DEF SENSOR_ODOR_44 Receiver {
-        translation 10.238788 1.022605 0.1
+        translation 3.108217 1.952293 0.1
         rotation 1 0 0 -1.5708
         children [
             Shape {
