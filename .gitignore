@@ -33,11 +33,10 @@
 *.app
 
 # Webots
-*.wbo
 *.wbproj
 *.d
+*Makefile
+**/build
 
 # Folders
 log
-plugins
-protos
