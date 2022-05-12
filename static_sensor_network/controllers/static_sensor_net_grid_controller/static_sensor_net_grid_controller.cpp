@@ -21,7 +21,9 @@
 
 #define PI 3.14159265359
 #define TIME_STEP           64 //adjusts the speed (ms) // Default value 64
-#define SENSOR_NUM_MAX      45
+#define SENSOR_NUM_MAX      250
+#define NB_SENSORS_X        15
+#define NB_SENSORS_Y        5
 #define ODOR_FILTER_LENGTH  150 // Default value 150 -> ~10sec //number of measurements before averaging
 #define ITERATIONS          1
 #define RANDOM0_GRID1       1
@@ -47,7 +49,7 @@ WbDeviceTag wind_tag[SENSOR_NUM_MAX];
 SampleBuffer* sampleBuffer = new SampleBuffer[SENSOR_NUM_MAX];
 int sensor_number = 0;
 double sensor_position[SENSOR_NUM_MAX][3] = {{0}};
-double source_position[3] = {14, 2, 0.1};
+double source_position[3] = {15, 2, 0.1};
 int total_nbr_iteration = 0;
 int iteration = 0;
 
@@ -66,7 +68,7 @@ void init(){
     // find total number of itrations
     total_nbr_iteration = RECORDING_TIME*1000/TIME_STEP;
     printf("total_nbr_iteration : %d\n", total_nbr_iteration);
-    sensor_number = SENSOR_NUM_MAX;
+    sensor_number = 75;
 
     //Get static sensor network
     WbNodeRef root_node = wb_supervisor_node_get_self();
@@ -100,32 +102,23 @@ void init(){
     }
 
     wb_supervisor_field_set_sf_vec3f(wb_supervisor_node_get_field(wb_supervisor_node_get_from_def("SOURCE_ODOR_0"),"translation"), source_position);
-    //wb_supervisor_field_set_sf_vec3f(wb_supervisor_node_get_field(wb_supervisor_node_get_from_def("ODOR_SUP"),"translation"), source_position);
-
 }
 
 
 void set_sensor_position(int i, double * position){
       // Static 2D grid (3x15 = 45 sensors)
-      if(i < 15){
-          position[0] = i+1;
-          position[1] = 1;
-      }
-      else if((i >= 15) && (i < 30)){
-          position[0] = i%15 + 1;
-          position[1] = 2;
-      }
-      else if((i >= 30) && (i < 45)){
-          position[0] = i%15+1;
-          position[1] = 3;
+      if(i < sensor_number){
+          position[0] = (double)(i/NB_SENSORS_Y)/2 + 8;
+          position[1] = (double)(i%NB_SENSORS_Y)/2 + 1;
       }
       else{
           position[0] = 0;
           position[1] = 0;
       }
       position[2] = 0.1;
-      //printf("Sensor %d position is %f %f\n", i, position[0], position[1]);
       
+      //printf("Sensor %d position is %f %f\n", i, position[0], position[1]);
+
     /*if(total_nbr_iteration - iteration <= RANDOM_ITERATIONS){
         //random
         position[0] = ( (rand()/(double)RAND_MAX) * (XMAX-XMIN) ) + XMIN;
@@ -313,18 +306,19 @@ bool still_wait(){
 }
 
 int main() {
-    printf("WARNING enter in static_sensor_net_grid_controller.cpp main function\n");
 
     int i = 0;
-    int wait = 25;
+    int wait = 10; // seconds
+    double start_rec_time = 0;
 
     init();
   
     //Get the sensor values and write them in a file
     while(iteration < total_nbr_iteration){
-        if(wait > 0){
-            wait--; //wait for the plume to be established
-            if(wait == 1) printf("done waiting!\n");
+        if(wb_robot_get_time() < wait){
+
+           //wait for the plume to be established
+           
             // if(still_wait() == false){
             //     wait = 0;    
             //     printf("Plume established!\n");
@@ -333,6 +327,11 @@ int main() {
         }
         else{
             // write instant concentration in sampleBuffer[i] (size = nb_iterations)
+            if(iteration == 0){
+                start_rec_time = wb_robot_get_time();
+                printf("done waiting %d seconds !\n", wait);
+            }
+            
             for(i=0; i < sensor_number; i++){
                 //continue measuring odor concentration
                 sampleBuffer[i].instant_concentration = odor_read(i);
@@ -352,16 +351,26 @@ int main() {
                // printf("Error opening files in log\n");
                // continue;
             // }
-      
-            for(i=0; i < sensor_number-1; i++){
-                //log in the data_base
-                fprintf(data_base, "%f, ", sampleBuffer[i].instant_concentration);   // C
+            // print headers
+            if(iteration == 0){
+                fprintf(data_base, "# t (s),");
+                i = 0;
+                for(int x=0; x<(NB_SENSORS_X); x++)
+                    for(int y=0; y<(NB_SENSORS_Y); y++){
+                        i += 1;
+                        if(i<sensor_number)
+                            fprintf(data_base, "C_%d%d0 (ppm),", x, y);
+                    }   
+                fprintf(data_base, "C_%d%d0 (ppm)\n", (NB_SENSORS_X-1), (NB_SENSORS_Y-1));
             }
-            fprintf(data_base, "%f", sampleBuffer[sensor_number-1].instant_concentration);
-            fprintf(data_base, "\n");
+            //log in the data_base
+            fprintf(data_base, "%f,", (wb_robot_get_time() - start_rec_time));
+            for(i=0; i < (sensor_number-1); i++)
+                fprintf(data_base, "%f,", sampleBuffer[i].instant_concentration);   // C
+            fprintf(data_base, "%f\n", sampleBuffer[sensor_number-1].instant_concentration);
             fclose(data_base);
-            printf("Iteration %d over\n", iteration+1);
-                           
+            
+            printf("Iteration %d over\n", iteration+1);            
             iteration++;
             
         }
