@@ -12,7 +12,7 @@ WorldInfo {
 }
 Viewpoint {
   orientation 0 1 0 0
-  position 7.8848393213610315 -0.12167961915680506 22.73039589375521
+  position 7.942272846399281 1.2220493601410427 25.322263998929575
 }
 Background {
   skyColor [
@@ -162,6 +162,88 @@ Solid {
   ]
   name "solid_down"
   boundingObject USE WALL_SHAPE2
+}
+DEF obstacle3 Solid {
+  translation 10.5 1.25 0.5
+  rotation 0.9999999999935002 2.9999999999805005e-06 -1.999999999987e-06 1.5707983071795866
+  children [
+    Solid {
+      translation 1.25 0 0.75
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.533333 0.541176 0.521569
+              emissiveColor 0.533333 0.541176 0.521569
+              transparency 0.5
+            }
+          }
+          geometry Box {
+            size 0.5 1 1
+          }
+        }
+      ]
+      name "solid(1)"
+    }
+    Solid {
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.533333 0.541176 0.521569
+              emissiveColor 0.533333 0.541176 0.521569
+              transparency 0.5
+            }
+          }
+          geometry Box {
+            size 3 1 0.5
+          }
+        }
+      ]
+    }
+  ]
+  name "obstacle3"
+}
+DEF obstacle4 Solid {
+  translation 6.5 2.75 0.5
+  rotation -0.9999999999935001 -2.9999999999805005e-06 1.999999999987e-06 -1.5707983071795866
+  children [
+    Solid {
+      translation -1.25 0 -0.75
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.533333 0.541176 0.521569
+              emissiveColor 0.533333 0.541176 0.521569
+              transparency 0.5
+            }
+          }
+          geometry Box {
+            size 0.5 1 1
+          }
+        }
+      ]
+      name "solid(1)"
+    }
+    Solid {
+      children [
+        Shape {
+          appearance Appearance {
+            material Material {
+              diffuseColor 0.533333 0.541176 0.521569
+              emissiveColor 0.533333 0.541176 0.521569
+              transparency 0.5
+            }
+          }
+          geometry Box {
+            size 3 1 0.5
+          }
+        }
+      ]
+    }
+  ]
+  name "obstacle4"
 }
 DEF ODOR_SUP Robot {
   children [
@@ -32808,7 +32890,7 @@ DEF ODOR_SUP Robot {
     }
   ]
   name "odor_sup"
-  controller ""
+  controller "odor_super"
   supervisor TRUE
 }
 DEF Static_Sensor_Network Robot {
@@ -44064,6 +44146,6 @@ DEF Static_Sensor_Network Robot {
     }
   ]
   name "static_sensor_network"
-  controller "static_sensor_net_grid_controller_3D"
+  controller "static_sensor_net_grid_controller"
   supervisor TRUE
 }

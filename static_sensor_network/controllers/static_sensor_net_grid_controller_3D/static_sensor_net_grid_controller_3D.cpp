@@ -21,10 +21,11 @@
 
 #define PI 3.14159265359
 #define TIME_STEP           64 //adjusts the speed (ms) // Default value 64
-#define WAITING_TIME        60 // waiting for the plume to be established (s)
+#define WAITING_TIME        60 // in seconds
 #define SENSOR_NUM_MAX      250
-#define NB_SENSORS_X        29
-#define NB_SENSORS_Y        7
+#define NB_SENSORS_X        16
+#define NB_SENSORS_Y        5
+#define NB_SENSORS_Z        3
 #define ODOR_FILTER_LENGTH  150 // Default value 150 -> ~10sec //number of measurements before averaging
 #define ITERATIONS          1
 #define RANDOM0_GRID1       1
@@ -50,7 +51,7 @@ WbDeviceTag wind_tag[SENSOR_NUM_MAX];
 SampleBuffer* sampleBuffer = new SampleBuffer[SENSOR_NUM_MAX];
 int sensor_number = 0;
 double sensor_position[SENSOR_NUM_MAX][3] = {{0}};
-double source_position[3] = {15, 2, 0.1};
+double source_position[3] = {15, 2, 1};
 int total_nbr_iteration = 0;
 int iteration = 0;
 
@@ -69,7 +70,7 @@ void init(){
     // find total number of itrations
     total_nbr_iteration = RECORDING_TIME*1000/TIME_STEP;
     printf("total_nbr_iteration : %d\n", total_nbr_iteration);
-      sensor_number = NB_SENSORS_X*NB_SENSORS_Y;
+      sensor_number = NB_SENSORS_X*NB_SENSORS_Y*NB_SENSORS_Z;
 
     //Get static sensor network
     WbNodeRef root_node = wb_supervisor_node_get_self();
@@ -109,16 +110,17 @@ void init(){
 void set_sensor_position(int i, double * position){
       // Static 2D grid (3x15 = 45 sensors)
       if(i < sensor_number){
-          position[0] = (double)(i/NB_SENSORS_Y)/2 + 1;
-          position[1] = (double)(i%NB_SENSORS_Y)/2 + 0.5;
+          position[0] = (double)((i/NB_SENSORS_Y)%NB_SENSORS_X)/2 + 7.5;
+          position[1] = (double)(i%NB_SENSORS_Y)/2 + 1;
+          position[2] = (double)(i/(NB_SENSORS_X*NB_SENSORS_Y))/5 + 1.0;
       }
       else{
           position[0] = 0;
           position[1] = 0;
+          position[2] = 0.1;
       }
-      position[2] = 0.1;
       
-      //printf("Sensor %d position is %f %f\n", i, position[0], position[1]);
+      //printf("Sensor %d position is %f %f %f\n", i, position[0], position[1], position[2]);
 
     /*if(total_nbr_iteration - iteration <= RANDOM_ITERATIONS){
         //random
@@ -345,7 +347,7 @@ int main() {
 
             //read sensors' data and log
             char logfilename[50];
-            sprintf(logfilename, "../../log/2D_windspeed.csv");
+            sprintf(logfilename, "../../log/spx%.1f_spy%.1f_spz%.1f.csv", source_position[0], source_position[1], source_position[2]);
             // TODO: create the file if not exist, check the avaibility before write
             FILE * data_base = fopen(logfilename, "a");
             // if (!data_base){
@@ -356,13 +358,16 @@ int main() {
             if(iteration == 0){
                 fprintf(data_base, "# t (s),");
                 i = 0;
-                for(int x=0; x<(NB_SENSORS_X); x++)
-                    for(int y=0; y<(NB_SENSORS_Y); y++){
-                        i += 1;
-                        if(i<sensor_number)
-                            fprintf(data_base, "C_%d%d0 (ppm),", x, y);
-                    }   
-                fprintf(data_base, "C_%d%d0 (ppm)\n", (NB_SENSORS_X-1), (NB_SENSORS_Y-1));
+                for(int z=0; z<(NB_SENSORS_Z); z++){
+                    for(int x=0; x<(NB_SENSORS_X); x++){
+                        for(int y=0; y<(NB_SENSORS_Y); y++){
+                            i += 1;
+                            if(i<sensor_number)
+                                fprintf(data_base, "C_%d%d%d (ppm),", x, y, z);
+                        }
+                     }
+                }      
+                fprintf(data_base, "C_%d%d%d (ppm)\n", (NB_SENSORS_X-1), (NB_SENSORS_Y-1), (NB_SENSORS_Z-1));
             }
             //log in the data_base
             fprintf(data_base, "%f,", (wb_robot_get_time() - start_rec_time));
